@@ -76,7 +76,7 @@ with open(flag_image, 'wb') as handler:
 
 ## NEW
 
-I create a new notebook with different visualization.
+Is create a new notebook with different visualization.
 To see it enter to Grafica Modificada.ipynb
 
 
