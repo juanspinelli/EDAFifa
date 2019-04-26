@@ -23,26 +23,40 @@ import random
 ## NEW CATEGORIES
 
 New categories are created by joining player statistics and obtaining the average.
-For example, to obtain the strength of the player join the balance, jump, stamina and strength and the average of each of them is obtained a general average that transforms into the ***Power*** column
+For example, to obtain the Interceptions of the player join the Marking, StandingTackle, SlidingTackle and HeadingAccuracy obtained a general average that transforms into the ***Defending*** column
 
 ```
-def power(players):
-    return int(round((players[['Balance', 'Jumping', 'Stamina', 
-                               'Strength']].mean()).mean()))
+def defending(players):
+    return int(round((players[['Interceptions','Marking', 'StandingTackle', 'SlidingTackle', 'HeadingAccuracy']].mean()).mean()))
 
-players['Power'] = players.apply(power, axis=1)
+def passing(players):
+    return int(round((players[['Vision', 'Crossing', 'ShortPassing','LongPassing','FKAccuracy','Curve']].mean()).mean()))
+
+def dribbling(players):
+    return int(round((players[['Agility', 'Balance', 'Reactions', 'BallControl', 'Dribbling']].mean()).mean()))
+
+def shooting(players):
+    return int(round((players[['Positioning', 'Finishing', 'ShotPower', 'LongShots', 'Volleys', 'Penalties']].mean()).mean()))
+
+def pace(players):
+    return int(round((players[['Acceleration', 'SprintSpeed']].mean()).mean()))
+
+def physical(players):
+    return int(round((players[['Jumping', 'Stamina', 'Strength', 'Aggression', 'Composure']].mean()).mean()))
+
+def ambidextrous_func(players):
+    return (int(players) * 10) + 50
 ```
 
 ## DIVISION OF CURRENT FEATURES TO GENERATE THE NEW COLUMNS
 
-- ***Defending*** = [Marking, StandingTackle, SlidingTackle]
-- ***General*** = [HeadingAccuracy, Dribbling, Curve, BallControl]
-- ***Mental*** = [Aggression, Interceptions, Positioning, Vision, Composure]
-- ***Passing*** = [Crossing, ShortPassing, LongPassing]
-- ***Mobility*** = [Acceleration, SprintSpeed, Agility, Reactions]
-- ***Power*** = [Balance, Jumping, Stamina, Strength]
-- ***Rating*** = [Potential, Overall]
-- ***Shooting*** = [Finishing, Volleys, FKAccuracy, ShotPower, LongShots, Penalties]
+- ***Defending*** = [Interceptions, Marking, StandingTackle, SlidingTackle, HeadingAccuracy]
+- ***passing*** = [Vision, Crossing, ShortPassing, LongPassing,FKAccuracy, Curve]
+- ***Dribbling*** = [Agility, Balance, Reactions, BallControl, Dribbling]
+- ***Shooting*** = [Positioning, Finishing, ShotPower, LongShots, Volleys, Penalties]
+- ***Pace*** = [Acceleration, SprintSpeed]
+- ***Physical*** = [Jumping, Stamina, Strength, Aggression,Composure]
+- ***Ambidextrou*** = [ Preferred foot plus stars in bad foot]
 
 ## TYPE OF GRAPHIC
 
@@ -58,26 +72,19 @@ The dataset has 17918 so you can pass an id from 0 to 17917.
 
 When executing the function that creates the graph this will go through the variables to obtain through the url that we have passed the flag of the country where the player was born, the logo of the team where he plays and a photo of his face (***flag_image*** , ***player_image***, ***logo_image***). These images will be downloaded only once in the project folder, then they will be modified as the function is called again.
 
-```
-flag_image = "img_flag.jpg"
-    
-img_flag = requests.get(image).content
-with open(flag_image, 'wb') as handler:
-    handler.write(img_flag)
-```
+
 ![Kroos](example/img.png)
 
 ## DATA VISUALIZATION
 
 ![Messi](example/1.png)
-![Ronaldo](example/2.png)
-![Neymar](example/3.png)
-![Kroos](example/4.png)
+![Neymar](example/2.png)
+![Gea](example/3.png)
+![NoFace](example/4.png)
 
-## NEW
+## OTHER ANALYZES
 
-Is create a new notebook with different visualization.
-To see it enter to Grafica Modificada.ipynb
-
-
-![New](example/new.png)
+![Wage](example/5.png)
+![Values](example/6.png)
+![PotentialWage](example/7.png)
+![NacionalityClub](example/8.png)
