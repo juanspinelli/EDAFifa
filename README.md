@@ -110,6 +110,9 @@ If the chosen player is GK or not, the graph is created with different statistic
 
 ![NacionalityClub](example/8.png)
 
+***Heat***
+
+![Heat](example/9.png)
 
 ***MIT License***
 
