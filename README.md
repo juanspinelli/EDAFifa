@@ -77,14 +77,35 @@ When executing the function that creates the graph this will go through the vari
 
 ## DATA VISUALIZATION
 
+
+If the chosen player is GK or not, the graph is created with different statistics
+
+### ***No GK***
+
 ![Messi](example/1.png)
-![Neymar](example/2.png)
+
+### ***GK***
+
 ![Gea](example/3.png)
+
+### If the photo of the player's face is not obtained, a silhouette is set by default
+
 ![NoFace](example/4.png)
 
 ## OTHER ANALYZES
 
+***Wage per player***
+
 ![Wage](example/5.png)
+
+***Players who have the most value***
+
 ![Values](example/6.png)
+
+***Teams with greater potential. Wage of players. Player with the highest Wage per team.***
+
 ![PotentialWage](example/7.png)
+
+***Nationalities by teams***
+
 ![NacionalityClub](example/8.png)
