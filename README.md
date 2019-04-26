@@ -1,4 +1,4 @@
-# Grafica Polar Fifa 2019 DataSet Kaggle
+# EDA Fifa 2019 DataSet Kaggle
 
 ![Kroos](example/fondoImage.jpg)
 
